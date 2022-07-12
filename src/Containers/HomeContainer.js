@@ -85,7 +85,7 @@ const HomeContainer = () => {
             onPress={handleGetLyrics}
             disabled={!canGetLyrics}
           >
-            {isLoading && (
+            {(isFetching || isLoading) && (
               <ActivityIndicator size="large" />
             )}
             <Text style={Fonts.textRegular}>Get lyrics</Text>

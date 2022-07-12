@@ -3,6 +3,9 @@ import { ScrollView, View, Text, Image } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTheme } from '@/Hooks'
 import { resetCurrentSong } from '@/Store/Songs'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { t } from 'i18next'
+import { navigate } from '@/Navigators/utils'
 
 const RoomContainer = () => {
   const { Common, Fonts, Gutters, Layout, ImageSize } = useTheme()
@@ -44,6 +47,16 @@ const RoomContainer = () => {
         <Text id="welcome" style={Fonts.textRegular}>
           {song.lyrics}
         </Text>
+        <TouchableOpacity
+          style={[
+            Layout.rowVCenter,
+            Common.button.rounded,
+            Gutters.regularBMargin,
+          ]}
+          onPress={() => navigate('Main')}
+        >
+          <Text style={Fonts.textRegular}>{t('songViewer.back')}</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   )

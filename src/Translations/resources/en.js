@@ -22,4 +22,7 @@ export default {
     },
     error: 'Oops! Sorry.. {{error}}',
   },
+  songViewer: {
+    back: 'Go to home page',
+  },
 }
