@@ -6,6 +6,7 @@ import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import { useDispatch } from 'react-redux'
 import { setCurrentSong } from '@/Store/Songs'
 import { useLazyFetchLyricsQuery } from '@/Services/modules/songs'
+import { navigate } from '@/Navigators/utils'
 
 const HomeContainer = () => {
   const { t } = useTranslation()
@@ -24,6 +25,14 @@ const HomeContainer = () => {
     await fetchLyrics({ artist, song })
     //dispatch(setCurrentSong())
   }
+
+  useEffect(() => {
+    if (data && data.lyrics) {
+      dispatch(setCurrentSong({ artist, song, lyrics: data.lyrics }))
+      navigate('SongViewer')
+    }
+  }, [data])
+
   console.log('data', isLoading, data)
   return (
     <ScrollView
@@ -64,7 +73,11 @@ const HomeContainer = () => {
             style={[Common.textInput]}
           />
           <TouchableOpacity
-            style={[Common.button.rounded, Gutters.regularBMargin]}
+            style={[
+              Common.button.rounded,
+              Gutters.regularBMargin,
+              !canGetLyrics ? { backgroundColor: '#fafafa' } : {},
+            ]}
             onPress={handleGetLyrics}
             disabled={!canGetLyrics}
           >

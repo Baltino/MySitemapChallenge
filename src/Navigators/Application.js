@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { StartupContainer } from '@/Containers'
 import { useTheme } from '@/Hooks'
 import MainNavigator from './Main'
-
+import SongContainer from '@/Containers/SongContainer'
 import { navigationRef } from './utils'
 
 const Stack = createStackNavigator()
@@ -24,6 +24,13 @@ const ApplicationNavigator = () => {
           <Stack.Screen
             name="Main"
             component={MainNavigator}
+            options={{
+              animationEnabled: false,
+            }}
+          />
+          <Stack.Screen
+            name="SongViewer"
+            component={SongContainer}
             options={{
               animationEnabled: false,
             }}
