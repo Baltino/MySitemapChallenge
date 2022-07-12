@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { ScrollView, View, Text, Image } from 'react-native'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useTheme } from '@/Hooks'
+import { resetCurrentSong } from '@/Store/Songs'
 
 const RoomContainer = () => {
   const { Common, Fonts, Gutters, Layout, ImageSize } = useTheme()
+  const dispatch = useDispatch()
 
   const song = useSelector(state => state.songs.currentSong)
+
+  // we reset the state for better UX
+  useEffect(() => () => {
+    dispatch(resetCurrentSong())
+  });
 
   return (
     <ScrollView

@@ -11,9 +11,12 @@ const slice = createSlice({
         lyrics,
       }
     },
+    resetCurrentSong: state => {
+      state.currentSong = { artist: '', title: '', lyrics: '' }
+    },
   },
 })
 
-export const { setCurrentSong } = slice.actions
+export const { setCurrentSong, resetCurrentSong } = slice.actions
 
 export default slice.reducer
