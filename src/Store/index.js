@@ -14,9 +14,11 @@ import {
 
 import { api } from '@/Services/api'
 import theme from './Theme'
+import songs from './Songs'
 
 const reducers = combineReducers({
   theme,
+  songs,
   api: api.reducer,
 })
 

@@ -1,2 +1,2 @@
 export { usersApi } from './users'
-export { roomsApi } from './rooms'
+export { songsApi } from './songs'
