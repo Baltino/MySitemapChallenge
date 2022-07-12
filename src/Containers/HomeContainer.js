@@ -51,7 +51,7 @@ const HomeContainer = () => {
         <View
           style={[Layout.column, Gutters.smallHPadding, Gutters.largeVMargin]}
         >
-          <Text style={[Fonts.textCenter, Fonts.textSmall]}>
+          <Text id="artistlabel" style={[Fonts.textCenter, Fonts.textSmall]}>
             {t('home.labels.artist')}
           </Text>
           <TextInput
