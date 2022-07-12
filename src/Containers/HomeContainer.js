@@ -23,6 +23,10 @@ const HomeContainer = () => {
 
   const handleGetLyrics = async () => {
     await fetchLyrics({ artist, song })
+    // this is no nice way to do it
+    setArtist('')
+    setSong('')
+
     //dispatch(setCurrentSong())
   }
 
