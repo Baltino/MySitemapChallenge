@@ -20,5 +20,6 @@ export default {
       artist: 'Coldplay',
       song: 'Yellow',
     },
+    error: 'Oops! Sorry.. {{error}}',
   },
 }

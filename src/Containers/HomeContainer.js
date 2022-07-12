@@ -33,7 +33,6 @@ const HomeContainer = () => {
     }
   }, [data])
 
-  console.log('data', isLoading, data)
   return (
     <ScrollView
       style={Layout.fill}
@@ -87,6 +86,11 @@ const HomeContainer = () => {
             )}
             <Text style={Fonts.textRegular}>Get lyrics</Text>
           </TouchableOpacity>
+          {error && (
+            <View style={[]}>
+              <Text style={{ color: 'red' }}>{t('home.error', { error: error.data?.error })}</Text>
+            </View>
+          )}
         </View>
       </View>
     </ScrollView>
