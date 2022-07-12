@@ -28,7 +28,7 @@ const HomeContainer = () => {
 
   useEffect(() => {
     if (data && data.lyrics) {
-      dispatch(setCurrentSong({ artist, song, lyrics: data.lyrics }))
+      dispatch(setCurrentSong({ artist, title: song, lyrics: data.lyrics }))
       navigate('SongViewer')
     }
   }, [data])
