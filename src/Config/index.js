@@ -1,3 +1,3 @@
 export const Config = {
-  API_URL: 'https://domaapi',
+  API_URL: 'https://api.lyrics.ovh/v1/',
 }

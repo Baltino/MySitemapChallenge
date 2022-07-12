@@ -12,5 +12,13 @@ export default {
   home: {
     title: 'My App',
     welcome: 'Welcome to the jungle!',
+    labels: {
+      artist: 'Write the artist',
+      song: 'Write the song',
+    },
+    placeholders: {
+      artist: 'Coldplay',
+      song: 'Yellow',
+    },
   },
 }
