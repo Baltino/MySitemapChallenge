@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, ActivityIndicator } from 'react-native'
 import { useTranslation } from 'react-i18next'
 import { useTheme } from '@/Hooks'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
@@ -74,6 +74,7 @@ const HomeContainer = () => {
           />
           <TouchableOpacity
             style={[
+              Layout.rowVCenter,
               Common.button.rounded,
               Gutters.regularBMargin,
               !canGetLyrics ? { backgroundColor: '#fafafa' } : {},
@@ -81,6 +82,9 @@ const HomeContainer = () => {
             onPress={handleGetLyrics}
             disabled={!canGetLyrics}
           >
+            {isLoading && (
+              <ActivityIndicator size="large" />
+            )}
             <Text style={Fonts.textRegular}>Get lyrics</Text>
           </TouchableOpacity>
         </View>
